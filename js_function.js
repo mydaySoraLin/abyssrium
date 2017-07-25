@@ -44,6 +44,7 @@ function search()
 			large = 1.35;
 			var next_fish_value = 0;
 			fish_value = $("#fish_value").val();
+			fish_num = $("#fish_num").val();
 
 			if(fish_value == '')
 			{
@@ -52,7 +53,17 @@ function search()
 				return false;
 			}
 
-			next_fish_value = fish_value * large;
+			if(fish_num == '')
+			{
+				alert('請輸入目前所需愛心量!');
+				$("#fish_num").focus();
+				return false;
+			}
+
+			for(var i = 1; i <= fish_num; i++)
+			{
+				next_fish_value += fish_value * Math.pow(large,i);
+			}
 			
 			if(next_fish_value > 1000)
 			{
