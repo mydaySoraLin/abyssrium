@@ -11,6 +11,13 @@ function search()
 		return false;
 	}
 
+	if(lev_eng == '')
+	{
+		alert('請輸入目前愛心等級!');
+		$("#lev_eng").focus();
+		return false;
+	}
+
 	if(lev_eng.length > 2)
 	{
 		alert("輸入的長度超過2個英文字母");
@@ -41,6 +48,7 @@ function search()
 			if(fish_value == '')
 			{
 				alert('請輸入目前所需愛心量!');
+				$("#fish_value").focus();
 				return false;
 			}
 
@@ -70,12 +78,14 @@ function search()
 			if(rock_lev == '')
 			{
 				alert('請輸入目前珊瑚等級!');
+				$("#rock_lev").focus();
 				return false;
 			}
 
 			if(rock_value == '')
 			{
 				alert('請輸入目前珊瑚升級所需愛心量!');
+				$("#rock_value").focus();
 				return false;
 			}
 
