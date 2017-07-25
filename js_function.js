@@ -67,7 +67,7 @@ function search()
 			
 			if(next_fish_value > 1000)
 			{
-				next_fish_value /= 1000;
+				next_fish_value = next_fish_value / 1000;
 				next_fish_value = Math.round(next_fish_value * 100) / 100;
 				eng = up_grade_eng(first_eng,sec_eng);
 			}
@@ -114,7 +114,7 @@ function search()
 			
 			if(next_rock_value > 1000)
 			{
-				next_rock_value /= 1000;
+				next_rock_value = next_rock_value / 1000;
 				next_rock_value = Math.round(next_rock_value * 100) / 100;
 				eng = up_grade_eng(first_eng,sec_eng);
 			}
