@@ -105,10 +105,9 @@ function search()
 			lev_quo = Math.floor(rock_lev / 25);
 			// 餘數
 			lev = rock_lev % 25;
-			start_lev = lev;
-			end_lev = 25 - start_lev;
+			end_lev = 25 - lev;
 			
-			for(var i = start_lev; i <= end_lev; i++)
+			for(var i = 1; i <= end_lev; i++)
 			{
 				next_rock_value += rock_value * Math.pow(large,i);
 			}
