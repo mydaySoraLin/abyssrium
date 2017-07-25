@@ -118,10 +118,10 @@ function search()
 			else
 			{
 				next_fish_value = Math.round(next_fish_value * 100) / 100;
-				eng = String.fromCharCode(first_eng) + String.fromCharCode(sec_eng)
+				eng = String.fromCharCode(first_eng) + String.fromCharCode(sec_eng);
 			}
 			
-			$("#result").html("升級至" + (lev_quo+1) * 25 + "等愛心需求量約：" + next_rock_value + " " + eng);
+			$("#result").html("升級至" + (lev_quo + 1) * 25 + "等愛心需求量約：" + next_rock_value + " " + eng);
 		break;
 	}
 }
