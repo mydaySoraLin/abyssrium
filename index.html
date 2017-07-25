@@ -64,6 +64,13 @@
 				<input type="text" class="form-control col-4" id="fish_value" name="fish_value" placeholder="目前所需愛心量" onkeyup="this.value=this.value.replace(/\D/g,'')" />
 				<label class="col-4"></label>
 			</div>
+
+			<label class="col-4">請輸入想養的數量：</label>
+			<div class="form-group row">
+				<label class="col-4"></label>
+				<input type="text" class="form-control col-4" id="fish_num" name="fish_num" placeholder="魚隻數量" onkeyup="this.value=this.value.replace(/\D/g,'')" />
+				<label class="col-4"></label>
+			</div>
 		</div>
 
 		<!-- 珊瑚 -->
@@ -120,26 +127,24 @@ $("#type").change(function(){
 			$("#lev").show();
 			$("#lev_eng").val('');
 			$("#result").html('');
-			$("#rock").attr("disabled",true);
 		break;
 
 		case 2:
 			$("#fish").hide();
 			$("#rock").show();
 			$("#lev").show();
+			$("#fish_num").val('');
 			$("#lev_eng").val('');
 			$("#result").html('');
-			$("#fish").attr("disabled",true);
 		break;
 
 		case 0:
 			$("#fish").hide();
 			$("#rock").hide();
 			$("#lev").hide();
+			$("#fish_num").val('');
 			$("#lev_eng").val('');
 			$("#result").html('');
-			$("#fish").attr("disabled",true);
-			$("#rock").attr("disabled",true);
 		break;
 	}
 });
