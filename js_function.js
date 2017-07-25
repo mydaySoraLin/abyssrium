@@ -21,7 +21,7 @@ function search()
 	if(lev_eng.length > 2)
 	{
 		alert("輸入的長度超過2個英文字母");
-		lev_eng.focus();
+		$("#lev_eng").focus();
 		return false;
 	}
 
