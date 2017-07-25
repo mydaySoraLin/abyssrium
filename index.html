@@ -29,11 +29,18 @@
 		{
 			margin-bottom: 10px;
 		}
+		small
+		{
+			color: red;
+		}
 	</style>
 </head>
 
 <body>
 	<h2>點點水族箱-愛心需求量計算</h2>
+
+	<small>※程式還在測試中，如有問題煩請轉告</small>
+
 	<div class="container" align="center center">
 		<label class="col-4">請選擇欲查詢的種類：</label>
 		<div class="form-group row">
@@ -50,7 +57,7 @@
 			<label class="col-4">請輸入目前所需愛心量：</label>
 			<div class="form-group row">
 				<label class="col-4"></label>
-				<input type="text" class="form-control col-4" id="fish_value" name="fish_value" placeholder="目前所需愛心量">
+				<input type="text" class="form-control col-4" id="fish_value" name="fish_value" placeholder="目前所需愛心量" onkeyup="this.value=this.value.replace(/\D/g,'')" />
 				<label class="col-4"></label>
 			</div>
 		</div>
@@ -60,13 +67,14 @@
 			<label class="col-4">請輸入目前等級：</label>
 			<div class="form-group row">
 				<label class="col-4"></label>
-				<input type="text" class="form-control col-4" id="rock_lev" name="rock_lev" placeholder="目前等級">
+				<input type="text" class="form-control col-4" id="rock_lev" name="rock_lev" placeholder="目前等級" onkeyup="this.value=this.value.replace(/\D/g,'')" />
 				<label class="col-4"></label>
 			</div class="form-group row">
+
 			<label class="col-4">請輸入目前所需愛心量：</label>
 			<div class="form-group row">
 				<label class="col-4"></label>
-				<input type="text" class="form-control col-4" id="rock_value" name="rock_value" placeholder="目前所需愛心量">
+				<input type="text" class="form-control col-4" id="rock_value" name="rock_value" placeholder="目前所需愛心量" onkeyup="this.value=this.value.replace(/\D/g,'')" />
 				<label class="col-4"></label>
 			</div>
 		</div>
@@ -76,7 +84,7 @@
 			<label class="col-4">請輸入目前愛心等級：</label>
 			<div class="form-group row">
 				<label class="col-4"></label>
-				<input type="text" class="form-control col-4" id="lev_eng" name="lev_eng" placeholder="請輸入BB、BD、CS...">
+				<input type="text" class="form-control col-4" id="lev_eng" name="lev_eng" placeholder="請輸入BB、BD、CS..." onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')" />
 				<label class="col-4"></label>
 			</div>
 		</div>
