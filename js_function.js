@@ -41,7 +41,7 @@ function search()
 	{
 		// 魚類
 		case 1:
-			large = 1.35;
+			large = 3.5;
 			var next_fish_value = 0;
 			fish_value = $("#fish_value").val();
 			fish_num = $("#fish_num").val();
