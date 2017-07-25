@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	
+	<script type="text/javascript" src="js_function.js"></script>
+
+	<title>水族箱愛心需求量計算</title>
+	<style>
+		*
+		{
+			text-align: center;
+		}
+		.container
+		{
+			margin-top: 2rem;
+			text-align: center;
+		}
+		label
+		{
+			padding-top: 10px;
+		}
+		input
+		{
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>點點水族箱-愛心需求量計算</h2>
+	<div class="container" align="center center">
+		<label class="col-4">請選擇欲查詢的種類：</label>
+		<div class="form-group row">
+			<label class="col-4"></label>
+			<select name="type" id="type" class="form-control col-4">
+				<option value="0">請選擇</option>
+				<option value="1">魚類</option>
+				<option value="2">珊瑚</option>
+			</select>
+		</div>
+		<br/>
+		<!-- 魚類 -->
+		<div id="fish">
+			<label class="col-4">請輸入目前所需愛心量：</label>
+			<div class="form-group row">
+				<label class="col-4"></label>
+				<input type="text" class="form-control col-4" id="fish_value" name="fish_value" placeholder="目前所需愛心量">
+				<label class="col-4"></label>
+			</div>
+		</div>
+
+		<!-- 珊瑚 -->
+		<div id="rock">
+			<label class="col-4">請輸入目前等級：</label>
+			<div class="form-group row">
+				<label class="col-4"></label>
+				<input type="text" class="form-control col-4" id="rock_lev" name="rock_lev" placeholder="目前等級">
+				<label class="col-4"></label>
+			</div class="form-group row">
+			<label class="col-4">請輸入目前所需愛心量：</label>
+			<div class="form-group row">
+				<label class="col-4"></label>
+				<input type="text" class="form-control col-4" id="rock_value" name="rock_value" placeholder="目前所需愛心量">
+				<label class="col-4"></label>
+			</div>
+		</div>
+
+		<!-- 愛心等級 -->
+		<div id="lev">
+			<label class="col-4">請輸入目前愛心等級：</label>
+			<div class="form-group row">
+				<label class="col-4"></label>
+				<input type="text" class="form-control col-4" id="lev_eng" name="lev_eng" placeholder="請輸入BB、BD、CS...">
+				<label class="col-4"></label>
+			</div>
+		</div>
+
+		<div id="final">
+			<div class="form-group row">
+				<label class="col-4"></label>
+				<label class="col-4" id="result"></label>
+				<label class="col-4"></label>
+			</div>
+		</div>
+		<button class="btn" onclick="search()">查詢</button>
+	</div>
+</body>
+
+<script>
+$(document).ready(function(){
+	$("#fish").hide();
+	$("#rock").hide();
+	$("#lev").hide();
+});
+
+$("#type").change(function(){
+	switch(parseInt($(this).val()))
+	{
+		case 1:
+			$("#fish").show();
+			$("#rock").hide();
+			$("#lev").show();
+			$("#lev_eng").val('');
+			$("#rock").attr("disabled",true);
+		break;
+
+		case 2:
+			$("#fish").hide();
+			$("#rock").show();
+			$("#lev").show();
+			$("#lev_eng").val('');
+			$("#fish").attr("disabled",true);
+		break;
+
+		case 0:
+			$("#fish").hide();
+			$("#rock").hide();
+			$("#lev").hide();
+			$("#lev_eng").val('');
+			$("#fish").attr("disabled",true);
+			$("#rock").attr("disabled",true);
+		break;
+	}
+});
+</script>
+</html>
