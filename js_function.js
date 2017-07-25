@@ -117,7 +117,7 @@ function search()
 			}
 			else
 			{
-				next_fish_value = Math.round(next_fish_value * 100) / 100;
+				next_rock_value = Math.round(next_rock_value * 100) / 100;
 				eng = String.fromCharCode(first_eng) + String.fromCharCode(sec_eng);
 			}
 			
