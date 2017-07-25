@@ -4,6 +4,13 @@ function search()
 	lev_eng = $("#lev_eng").val();
 	var eng;
 
+	if(type == 0)
+	{
+		alert("請選擇欲查詢的種類");
+		$("#type").focus();
+		return false;
+	}
+
 	if(lev_eng.length > 2)
 	{
 		alert("輸入的長度超過2個英文字母");
@@ -15,7 +22,7 @@ function search()
 	if(lev_eng.length == 1)
 	{
 		first_eng = "";
-		sec_eng = lev_eng;
+		sec_eng = lev_eng.charCodeAt(0);
 	}
 	if(lev_eng.length == 2)
 	{
@@ -46,6 +53,7 @@ function search()
 			}
 			else
 			{
+				next_fish_value = Math.round(next_fish_value * 100) / 100;
 				eng = String.fromCharCode(first_eng) + String.fromCharCode(sec_eng)
 			}
 			
@@ -58,6 +66,18 @@ function search()
 			var next_rock_value = 0;
 			rock_lev = $("#rock_lev").val();
 			rock_value = $("#rock_value").val();
+
+			if(rock_lev == '')
+			{
+				alert('請輸入目前珊瑚等級!');
+				return false;
+			}
+
+			if(rock_value == '')
+			{
+				alert('請輸入目前珊瑚升級所需愛心量!');
+				return false;
+			}
 
 			// 商數
 			lev_quo = Math.floor(rock_lev / 25);
@@ -76,16 +96,11 @@ function search()
 			}
 			else
 			{
+				next_fish_value = Math.round(next_fish_value * 100) / 100;
 				eng = String.fromCharCode(first_eng) + String.fromCharCode(sec_eng)
 			}
 			
 			$("#result").html("升級至" + (lev_quo+1) * 25 + "等愛心需求量約：" + next_rock_value + " " + eng);
-		break;
-
-		default:
-			alert("請選擇欲查詢的種類");
-			$("#type").focus();
-			return false;
 		break;
 	}
 }
@@ -94,9 +109,26 @@ function up_grade_eng(first_eng,sec_eng)
 {
 	if(sec_eng == 90 || sec_eng == 122)
 	{
-		first_eng++;
-		if(sec_eng == 90) sec_eng = 65;
-		if(sec_eng == 122) sec_eng = 97;
+		if(first_eng == '')
+		{
+			if(sec_eng == 90)
+			{
+				first_eng = 65;
+				sec_eng = 65;
+			}
+			if(sec_eng == 122)
+			{
+				first_eng = 97;
+				sec_eng = 97;
+			}
+		}
+		else
+		{
+			first_eng++;
+			if(sec_eng == 90) sec_eng = 65;
+			if(sec_eng == 122) sec_eng = 97;
+		}
+		
 	}
 	else
 	{
