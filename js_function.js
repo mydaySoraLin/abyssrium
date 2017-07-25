@@ -49,7 +49,7 @@ function search()
 				eng = String.fromCharCode(first_eng) + String.fromCharCode(sec_eng)
 			}
 			
-			$("#result").html("愛心需求量約：" + next_fish_value + " " + eng);
+			$("#result").html("下一隻魚的愛心需求量約：" + next_fish_value + " " + eng);
 		break;
 
 		// 珊瑚
