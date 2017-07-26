@@ -15,6 +15,7 @@
 		*
 		{
 			text-align: center;
+			margin-top: 0.5rem;
 		}
 		h2
 		{
@@ -22,7 +23,7 @@
 		}
 		.container
 		{
-			margin-top: 2rem;
+			margin-bottom: 2rem;
 			text-align: center;
 		}
 		label
@@ -43,7 +44,17 @@
 <body>
 	<h2>點點水族箱-愛心需求量計算</h2>
 
-	<small>※程式還在測試中，如有問題煩請轉告</small>
+	<small>※程式還在測試中，如有問題煩請轉告</small><br/>
+
+	<!-- <div id="btn">
+		<div class="form-group row">
+			<label class="col-3"></label>
+			<div class="col-6">
+				<button type="button" class="btn btn-info">技能愛心計算</button>
+			</div>
+		</div>
+	</div>
+	<br/> -->
 
 	<div class="container" align="center center">
 		<label class="col-4">請選擇欲查詢的種類：</label>
@@ -61,15 +72,13 @@
 			<label class="col-4">請輸入目前所需愛心量：</label>
 			<div class="form-group row">
 				<label class="col-4"></label>
-				<input type="text" class="form-control col-4" id="fish_value" name="fish_value" placeholder="目前所需愛心量" />
-				<label class="col-4"></label>
+				<input type="text" class="form-control col-4" id="fish_value" name="fish_value" placeholder="目前所需愛心量" /><br/>
 			</div>
 
 			<label class="col-4">請輸入想養的數量：</label>
 			<div class="form-group row">
 				<label class="col-4"></label>
-				<input type="text" class="form-control col-4" id="fish_num" name="fish_num" placeholder="魚隻數量" onkeyup="this.value=this.value.replace(/\D/g,'')" />
-				<label class="col-4"></label>
+				<input type="text" class="form-control col-4" id="fish_num" name="fish_num" placeholder="魚隻數量" onkeyup="this.value=this.value.replace(/\D/g,'')" /><br/>
 			</div>
 		</div>
 
@@ -78,15 +87,13 @@
 			<label class="col-4">請輸入目前等級：</label>
 			<div class="form-group row">
 				<label class="col-4"></label>
-				<input type="text" class="form-control col-4" id="rock_lev" name="rock_lev" placeholder="目前等級" onkeyup="this.value=this.value.replace(/\D/g,'')" />
-				<label class="col-4"></label>
+				<input type="text" class="form-control col-4" id="rock_lev" name="rock_lev" placeholder="目前等級" onkeyup="this.value=this.value.replace(/\D/g,'')" /><br/>
 			</div class="form-group row">
 
 			<label class="col-4">請輸入目前升等所需愛心量：</label>
 			<div class="form-group row">
 				<label class="col-4"></label>
-				<input type="text" class="form-control col-4" id="rock_value" name="rock_value" placeholder="目前所需愛心量" />
-				<label class="col-4"></label>
+				<input type="text" class="form-control col-4" id="rock_value" name="rock_value" placeholder="目前所需愛心量" /><br/>
 			</div>
 		</div>
 
@@ -95,16 +102,14 @@
 			<label class="col-4">請輸入目前愛心等級：</label>
 			<div class="form-group row">
 				<label class="col-4"></label>
-				<input type="text" class="form-control col-4" id="lev_eng" name="lev_eng" placeholder="請輸入BB、BD、CS..." onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')" />
-				<label class="col-4"></label>
+				<input type="text" class="form-control col-4" id="lev_eng" name="lev_eng" placeholder="請輸入BB、BD、CS..." onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')" /><br/>
 			</div>
 		</div>
 
 		<div id="final">
 			<div class="form-group row">
 				<label class="col-3"></label>
-				<label class="col-6" id="result"></label>
-				<label class="col-3"></label>
+				<label class="col-6" id="result"></label><br/>
 			</div>
 		</div>
 		<button class="btn btn-info" onclick="search()">查詢</button>
@@ -125,7 +130,7 @@ $("#type").change(function(){
 			$("#fish").show();
 			$("#rock").hide();
 			$("#lev").show();
-			$("#lev_eng").val('');
+			$("input").val('');
 			$("#result").html('');
 		break;
 
@@ -133,8 +138,7 @@ $("#type").change(function(){
 			$("#fish").hide();
 			$("#rock").show();
 			$("#lev").show();
-			$("#fish_num").val('');
-			$("#lev_eng").val('');
+			$("input").val('');
 			$("#result").html('');
 		break;
 
@@ -142,8 +146,7 @@ $("#type").change(function(){
 			$("#fish").hide();
 			$("#rock").hide();
 			$("#lev").hide();
-			$("#fish_num").val('');
-			$("#lev_eng").val('');
+			$("input").val('');
 			$("#result").html('');
 		break;
 	}
