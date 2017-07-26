@@ -2,7 +2,7 @@ function search()
 {
 	type = parseInt($("#type").val());
 	lev_eng = $("#lev_eng").val();
-	var eng;
+	var eng = lev_eng;
 
 	if(type == 0)
 	{
@@ -25,18 +25,6 @@ function search()
 		return false;
 	}
 
-	// 切割字串
-	if(lev_eng.length == 1)
-	{
-		first_eng = "";
-		sec_eng = lev_eng.charCodeAt(0);
-	}
-	if(lev_eng.length == 2)
-	{
-		first_eng = lev_eng.charCodeAt(0);
-		sec_eng = lev_eng.charCodeAt(1);
-	}
-
 	switch(type)
 	{
 		// 魚類
@@ -53,9 +41,16 @@ function search()
 				return false;
 			}
 
+			if(fish_value > 1000)
+			{
+				alert('輸入的愛心量大於1000，請重新輸入!');
+				$("#fish_value").focus();
+				return false;
+			}
+
 			if(fish_num == '')
 			{
-				alert('請輸入目前所需愛心量!');
+				alert('請輸入想養的魚隻數目!');
 				$("#fish_num").focus();
 				return false;
 			}
@@ -64,20 +59,22 @@ function search()
 			{
 				next_fish_value += fish_value * Math.pow(large,i);
 			}
-			
-			if(next_fish_value > 1000)
+
+			//檢查需進位多少
+			while(next_fish_value > 1000)
 			{
 				next_fish_value = next_fish_value / 1000;
 				next_fish_value = Math.round(next_fish_value * 1000) / 1000;
-				eng = up_grade_eng(first_eng,sec_eng);
+				eng = up_grade_eng(eng);
 			}
-			else
+
+			if(next_fish_value < 1000)
 			{
 				next_fish_value = Math.round(next_fish_value * 1000) / 1000;
-				eng = String.fromCharCode(first_eng) + String.fromCharCode(sec_eng)
+				eng = String.fromCharCode(first_eng) + String.fromCharCode(sec_eng);
 			}
 			
-			$("#result").html("下一隻魚的愛心需求量約：" + next_fish_value + " " + eng);
+			$("#result").html(fish_num + "隻魚所需的愛心需求量約：" + next_fish_value + " " + eng);
 		break;
 
 		// 珊瑚
@@ -101,6 +98,13 @@ function search()
 				return false;
 			}
 
+			if(rock_value > 1000)
+			{
+				alert('輸入的愛心量大於1000，請重新輸入!');
+				$("#rock_value").focus();
+				return false;
+			}
+
 			// 商數
 			lev_quo = Math.floor(rock_lev / 25);
 			// 餘數
@@ -112,13 +116,15 @@ function search()
 				next_rock_value += rock_value * Math.pow(large,i);
 			}
 			
-			if(next_rock_value > 1000)
+			//檢查需進位多少
+			while(next_rock_value > 1000)
 			{
 				next_rock_value = next_rock_value / 1000;
 				next_rock_value = Math.round(next_rock_value * 1000) / 1000;
-				eng = up_grade_eng(first_eng,sec_eng);
+				eng = up_grade_eng(eng);
 			}
-			else
+
+			if(next_rock_value < 1000)
 			{
 				next_rock_value = Math.round(next_rock_value * 1000) / 1000;
 				eng = String.fromCharCode(first_eng) + String.fromCharCode(sec_eng);
@@ -129,8 +135,20 @@ function search()
 	}
 }
 
-function up_grade_eng(first_eng,sec_eng)
+function up_grade_eng(lev_eng)
 {
+	// 切割字串
+	if(lev_eng.length == 1)
+	{
+		first_eng = "";
+		sec_eng = lev_eng.charCodeAt(0);
+	}
+	if(lev_eng.length == 2)
+	{
+		first_eng = lev_eng.charCodeAt(0);
+		sec_eng = lev_eng.charCodeAt(1);
+	}
+
 	if(sec_eng == 90 || sec_eng == 122)
 	{
 		if(first_eng == '')
@@ -159,6 +177,5 @@ function up_grade_eng(first_eng,sec_eng)
 		sec_eng++;
 	}
 
-	eng = String.fromCharCode(first_eng) + String.fromCharCode(sec_eng);
-	return eng;
+	return String.fromCharCode(first_eng) + String.fromCharCode(sec_eng);
 }
