@@ -76,18 +76,16 @@ function skill_search()
 	coral_value   = $("#coral_value").val();
 	rock_lev_eg   = $("#rock_lev_eg").val();
 	coral_lev_eng = $("#coral_lev_eng").val();
-	var volcanic_rock = 0;
-	var volcanic_coral = 0;
-	var sea_food_rock = 0;
-	var sea_food_coral = 0;
-	var nautilus_rock = 0;
-	var nautilus_coral = 0;
+	var volcanic_rock,volcanic_coral;
+	var sea_food_rock, sea_food_coral;
+	var nautilus_rock,nautilus_coral;
 
 	//月之歌
 	if(moon_song != '')
 	{
 		rock_value *= moon_song;
-		coral_value *= moon_song;alert('ms: ' + rock_value + '  '+ coral_value);
+		coral_value *= moon_song;
+		//alert('ms: ' + rock_value + '  '+ coral_value);
 	}
 
 	//=====================================================
@@ -103,7 +101,8 @@ function skill_search()
 		{
 			// 每秒點擊 10 次
 			volcanic_rock = rock_value * 10 * 60;
-			volcanic_coral = coral_value * 10 * 60;alert('vol: ' + volcanic_rock + '  '+ volcanic_coral);
+			volcanic_coral = coral_value * 10 * 60;
+			//alert('vol: ' + volcanic_rock + '  '+ volcanic_coral);
 		}
 		else
 		{
@@ -112,31 +111,45 @@ function skill_search()
 			volcanic_coral = coral_value * (volcanic - 5) * 10 * 60;
 		}
 	}
+	else
+	{
+		volcanic_rock = 0;
+		volcanic_coral = 0;
+	}
 	
 	//海鮮大餐
 	if(sea_food != '')
 	{
 		sea_food_rock = rock_value * sea_food;
-		sea_food_coral = coral_value * sea_food;alert('sf: '+ sea_food_rock + '  ' + sea_food_coral);
+		sea_food_coral = coral_value * sea_food;
+		//alert('sf: '+ sea_food_rock + '  ' + sea_food_coral);
+	}
+	else
+	{
+		sea_food_rock = 0;
+		sea_food_coral = 0;
 	}
 
 	// 邁達斯點擊
 	if(touch != '' && touch == 10)
 	{
 		// 每分鐘
-		touch = rock_value * touch * 10 * 60;alert('touch: ' + touch);
+		touch = rock_value * touch * 10 * 60;
+		//alert('touch: ' + touch);
+	}
+	else
+	{
+		touch = 0;
 	}
 	
 	//鸚鵡螺號
 	nautilus_rock = rock_value * nautilus;
-	nautilus_coral = coral_value * nautilus;alert('naut: '+ nautilus_rock + '  '+ nautilus_coral);
+	nautilus_coral = coral_value * nautilus;
+	//alert('naut: '+ nautilus_rock + '  '+ nautilus_coral);
 
-	rock_value = volcanic_rock + sea_food_rock + touch + nautilus_rock;
-	coral_value = (volcanic_coral + sea_food_coral) + nautilus_coral;
-	// rock_value = 5 * (volcanic_rock + sea_food_rock + touch) + nautilus_rock;
-	// coral_value = 5 * (volcanic_coral + sea_food_coral) + nautilus_coral;
-
-	alert(rock_value + "  " + coral_value);
+	rock_value = 5 * (volcanic_rock + sea_food_rock + touch) + nautilus_rock;
+	coral_value = 5 * (volcanic_coral + sea_food_coral) + nautilus_coral;
+	// alert(rock_value + "  " + coral_value);
 
 	// 檢查需進位多少
 	while(rock_value > 1000)
@@ -154,8 +167,8 @@ function skill_search()
 		coral_lev_eng = up_grade_eng(coral_lev_eng);
 	}
 
-	alert("五分鐘產出\n珊瑚石產量： " + rock_value + rock_lev_eg + "\n" + "珊瑚產量： " + coral_value + coral_lev_eng);
-
+	$("#final").show();
+	$("#result").html("五分鐘可產出最大量<br/>珊瑚石產量： " + rock_value + rock_lev_eg + "<br/>珊瑚產量： " + coral_value + coral_lev_eng);
 }
 
 function up_grade_eng(lev_eng)
