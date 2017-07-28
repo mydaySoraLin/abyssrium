@@ -37,16 +37,16 @@
 			<label class="col-2"></label>
 			<div class="col-8">
 				<label class="form-check-label">
-					<input type="checkbox" class="form-check-input" id="volcanic" name="volcanic" onclick="skill(1,0)" />火山爆發
+					<input type="checkbox" class="form-check-input" id="volcanic" name="volcanic" value="" onclick="skill(1,0)" />火山爆發
 				</label>
 				<label class="form-check-label">
-					<input type="checkbox" class="form-check-input" id="sea_food" name="sea_food" onclick="skill(2,0)" />海鮮大餐
+					<input type="checkbox" class="form-check-input" id="sea_food" name="sea_food" value="" onclick="skill(2,0)" />海鮮大餐
 				</label>
 				<label class="form-check-label">
-					<input type="checkbox" class="form-check-input" id="moon_song" name="moon_song" onclick="skill(3,0)" />月之歌
+					<input type="checkbox" class="form-check-input" id="moon_song" name="moon_song" value="" onclick="skill(3,0)" />月之歌
 				</label>
 				<label class="form-check-label">
-					<input type="checkbox" class="form-check-input" id="touch" name="touch" value="10" onclick="skill(4,0)" />邁達斯點擊(商店)
+					<input type="checkbox" class="form-check-input" id="touch" name="touch" value="" onclick="skill(4,0)" />邁達斯點擊(商店)
 				</label>
 				<input type="hidden" id="nautilus" name="nautilus" value="30" />
 			</div>
@@ -170,7 +170,7 @@
 					<input type="text" class="form-control" id="rock_value" name="rock_value" placeholder="目前產出愛心量" />
 				</div>
 				<div class="col-2.5">
-					<input type="text" class="form-control" id="rock_lev_eg" name="rock_lev_eg" placeholder="目前愛心級距(BS...)" />
+					<input type="text" class="form-control" id="rock_lev_eg" name="rock_lev_eg" placeholder="目前愛心級距(BS...)" onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')" />
 				</div>
 			</div>
 		</div>
@@ -183,7 +183,7 @@
 					<input type="text" class="form-control" id="coral_value" name="coral_value" placeholder="目前產出愛心量" />
 				</div>
 				<div class="col-2.5">
-					<input type="text" class="form-control" id="coral_lev_eng" name="coral_lev_eng" placeholder="目前愛心級距(BS...)" />
+					<input type="text" class="form-control" id="coral_lev_eng" name="coral_lev_eng" placeholder="目前愛心級距(BS...)" onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')" />
 				</div>
 			</div>
 		</div>
