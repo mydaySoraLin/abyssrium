@@ -168,7 +168,7 @@ function skill_search()
 	}
 
 	$("#final").show();
-	$("#result").html("五分鐘可產出最大量<br/>珊瑚石產量： " + rock_value + rock_lev_eg + "<br/>珊瑚產量： " + coral_value + coral_lev_eng);
+	$("#result").html("五分鐘可產出最大量<br/>珊瑚石產量約： " + rock_value + rock_lev_eg + "<br/>珊瑚產量約： " + coral_value + coral_lev_eng);
 }
 
 function up_grade_eng(lev_eng)
