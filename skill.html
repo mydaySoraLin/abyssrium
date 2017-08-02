@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	
+	<link rel="stylesheet" href="layout.css" type="text/css" media="screen">
+	<script type="text/javascript" src="skill_js.js"></script>
+
+	<title>使用技能</title>
+	<style>
+		.container label
+		{
+			text-align: right;
+		}
+		.form-group div
+		{
+			text-align: left;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>點點水族箱-使用技能</h2>
+
+	<small style="color:red;">※數值測試中，如有嚴重錯誤煩請轉告</small><br/><br/>
+
+	<div id="btn">
+		<div class="form-group row">
+			<label class="col-3"></label>
+			<div class="col-6" style="text-align: center;">
+				<a role="button" class="btn btn-sm btn-info" href="index.html">魚/珊瑚石</a>
+				<a role="button" class="btn btn-sm btn-primary" href="skill.html">使用技能</a>
+			</div>
+		</div>
+	</div>
+	<br/>
+	
+	<div class="container" align="center center">
+		<!-- 技能 -->
+		<div class="form-group row">
+			<label class="col-5">請選擇欲查詢的種類(可複選)：</label>
+			<div class="col-5">
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="volcanic" name="volcanic" value="" onclick="skill(1,0)" />火山爆發
+				</label>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="sea_food" name="sea_food" value="" onclick="skill(2,0)" />海鮮大餐
+				</label>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="moon_song" name="moon_song" value="" onclick="skill(3,0)" />月之歌
+				</label>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="touch" name="touch" value="" onclick="skill(4,0)" />邁達斯點擊(商店)
+				</label>
+				<input type="hidden" id="mysterious_shell" name="mysterious_shell" value="" />
+				<input type="hidden" id="nautilus" name="nautilus" value="30" />
+			</div>
+			<br/><br/>
+		</div>
+
+		<!-- 沙城 -->
+		<div class="form-group row">
+			<label class="col-5">請選擇擁有的沙城：</label>
+			<div class="col-4">
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="sm_cal" name="sm_cal" value="" onclick="skill(5,0)" />小沙城
+				</label>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="m_cal" name="m_cal" value="" onclick="skill(6,0)" />普通沙城
+				</label>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="bg_cal" name="bg_cal" value="" onclick="skill(7,0)" />大沙城
+				</label>
+			</div>
+		</div>
+
+		<!-- 火山口 -->
+		<div class="form-group row">
+			<label class="col-5">請選擇擁有的火山口：</label>
+			<div class="col-4">
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="sm_vol" name="sm_vol" value="" onclick="skill(8,0)" />小火山口
+				</label>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="m_vol" name="m_vol" value="" onclick="skill(9,0)" />普通火山口
+				</label>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="bg_vol" name="bg_vol" value="" onclick="skill(10,0)" />大火山口
+				</label>
+			</div>
+		</div>	
+	</div>
+
+	<div class="container sel">
+		<!-- 火山爆發 -->
+		<div id="mountain">
+			<div class="form-group row">
+				<label class="col-5">請選擇火山爆發等級：</label>
+				<select name="vol" id="vol" class="form-control col-3">
+					<option value="">請選擇</option>
+					<option value="5">1</option>
+					<option value="6">2</option>
+					<option value="7">3</option>
+					<option value="8">4</option>
+					<option value="9">5</option>
+					<option value="10">6</option>
+					<option value="11">7</option>
+					<option value="12">8</option>
+					<option value="13">9</option>
+					<option value="14">10</option>
+					<option value="15">11</option>
+					<option value="16">12</option>
+					<option value="17">13</option>
+					<option value="18">14</option>
+					<option value="19">15</option>
+				</select><br/>
+			</div>
+		</div>
+
+		<!-- 海鮮大餐 -->
+		<div id="food">
+			<div class="form-group row">
+				<label class="col-5">請選擇海鮮大餐等級：</label>
+				<select name="sf" id="sf" class="form-control col-3">
+					<option value="">請選擇</option>
+					<option value="5000">1</option>
+					<option value="6000">2</option>
+					<option value="7000">3</option>
+					<option value="8000">4</option>
+					<option value="9000">5</option>
+					<option value="10000">6</option>
+					<option value="11000">7</option>
+					<option value="12000">8</option>
+					<option value="13000">9</option>
+					<option value="14000">10</option>
+					<option value="15000">11</option>
+					<option value="16000">12</option>
+					<option value="17000">13</option>
+					<option value="18000">14</option>
+					<option value="19000">15</option>
+					<option value="20000">16</option>
+					<option value="21000">17</option>
+					<option value="22000">18</option>
+					<option value="23000">19</option>
+					<option value="24000">20</option>
+				</select><br/>
+			</div>
+		</div>
+
+		<!-- 月之歌 -->
+		<div id="moon">
+			<div class="form-group row">
+				<label class="col-5">請選擇月之歌等級：</label>
+				<select name="ms" id="ms" class="form-control col-3">
+					<option value="">請選擇</option>
+					<option value="5">1</option>
+					<option value="6">2</option>
+					<option value="7">3</option>
+					<option value="8">4</option>
+					<option value="9">5</option>
+					<option value="10">6</option>
+					<option value="11">7</option>
+					<option value="12">8</option>
+					<option value="13">9</option>
+					<option value="14">10</option>
+					<option value="15">11</option>
+					<option value="16">12</option>
+					<option value="17">13</option>
+					<option value="18">14</option>
+					<option value="19">15</option>
+					<option value="20">16</option>
+					<option value="21">17</option>
+					<option value="22">18</option>
+					<option value="23">19</option>
+					<option value="24">20</option>
+					<option value="25">21</option>
+				</select><br/>
+			</div>
+		</div>
+
+		<!-- 神秘的貝殼 -->
+		<div id="shel">
+			<div class="form-group row">
+				<label class="col-5">請選擇神秘的貝殼等級：</label>
+				<select name="shell" id="shell" class="form-control col-3">
+					<option value="1.1">1</option>
+					<option value="1.2">2</option>
+					<option value="1.3">3</option>
+					<option value="1.4">4</option>
+					<option value="1.5">5</option>
+					<option value="1.6">6</option>
+					<option value="1.7">7</option>
+					<option value="1.8">8</option>
+					<option value="1.9">9</option>
+					<option value="2.0">10</option>
+					<option value="2.1">11</option>
+					<option value="2.2">12</option>
+				</select><br/>
+			</div>
+		</div>
+
+		<!-- 鸚鵡螺號 -->
+		<div id="boat">
+			<div class="form-group row">
+				<label class="col-5">請選擇鸚鵡螺號等級：</label>
+				<select name="naut" id="naut" class="form-control col-3">
+					<option value="30">1</option>
+					<option value="40">2</option>
+					<option value="50">3</option>
+					<option value="60">4</option>
+					<option value="70">5</option>
+					<option value="80">6</option>
+					<option value="90">7</option>
+					<option value="100">8</option>
+					<option value="110">9</option>
+					<option value="120">10</option>
+					<option value="130">11</option>
+					<option value="140">12</option>
+				</select><br/>
+			</div>
+		</div>
+
+		<!-- 小沙城 -->
+		<div id="sm_castle">
+			<div class="form-group row">
+				<label class="col-5">請選擇小沙城等級：</label>
+				<select name="sm_c" id="sm_c" class="form-control col-3">
+					<option value="">請選擇</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select><br/>
+			</div>
+		</div>
+
+		<!-- 普通沙城 -->
+		<div id="m_castle">
+			<div class="form-group row">
+				<label class="col-5">請選擇普通沙城等級：</label>
+				<select name="m_c" id="m_c" class="form-control col-3">
+					<option value="">請選擇</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+				</select><br/>
+			</div>
+		</div>
+
+		<!-- 大沙城 -->
+		<div id="bg_castle">
+			<div class="form-group row">
+				<label class="col-5">請選擇大沙城等級：</label>
+				<select name="bg_c" id="bg_c" class="form-control col-3">
+					<option value="">請選擇</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+				</select><br/>
+			</div>
+		</div>
+
+		<!-- 小火山口 -->
+		<div id="sm_volc">
+			<div class="form-group row">
+				<label class="col-5">請選擇小火山口等級：</label>
+				<select name="sm_v" id="sm_v" class="form-control col-3">
+					<option value="">請選擇</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select><br/>
+			</div>
+		</div>
+
+		<!-- 普通火山口 -->
+		<div id="m_volc">
+			<div class="form-group row">
+				<label class="col-5">請選擇普通火山口等級：</label>
+				<select name="m_v" id="m_v" class="form-control col-3">
+					<option value="">請選擇</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+				</select><br/>
+			</div>
+		</div>
+
+		<!-- 大火山口 -->
+		<div id="bg_volc">
+			<div class="form-group row">
+				<label class="col-5">請選擇大火山口等級：</label>
+				<select name="bg_v" id="bg_v" class="form-control col-3">
+					<option value="">請選擇</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+				</select><br/>
+			</div>
+		</div>
+
+		<!-- 珊瑚石 -->
+		<div id="rock">
+			<div class="form-group row">
+				<label class="col-5 col-form-control">請輸入目前珊瑚石愛心產出量：</label>
+				<div class="col-3">
+					<input type="text" class="form-control" id="rock_value" name="rock_value" placeholder="目前產出愛心量" onkeyup="return ValidateNumber(this,value)" />
+				</div>
+				<div class="col-2.5">
+					<input type="text" class="form-control" id="rock_lev_eg" name="rock_lev_eg" placeholder="目前愛心級距(BS...)" onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')" />
+				</div>
+			</div>
+		</div>
+
+		<!-- 珊瑚 -->
+		<div id="rock">
+			<div class="form-group row">
+				<label class="col-5 col-form-control">請輸入目前珊瑚愛心產出量：</label>
+				<div class="col-3">
+					<input type="text" class="form-control" id="coral_value" name="coral_value" placeholder="目前產出愛心量" onkeyup="return ValidateNumber(this,value)" />
+				</div>
+				<div class="col-2.5">
+					<input type="text" class="form-control" id="coral_lev_eng" name="coral_lev_eng" placeholder="目前愛心級距(BS...)" onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')" />
+				</div>
+			</div>
+		</div>
+
+		<div id="final">
+			<div class="form-group row">
+				<label class="col-3"></label>
+				<label class="col-6" id="result"></label><br/>
+			</div>
+		</div>
+		<button class="btn btn-primary" style="margin-top: 1rem;" onclick="skill_search()">查詢</button>
+	</div>
+
+	<div id="creater"><small>made by SoraLin</small></div>
+</body>
+
+<script>
+$("#vol").change(function()
+{
+	$("#volcanic").val($(this).val());
+});
+$("#sf").change(function()
+{
+	$("#sea_food").val($(this).val());
+});
+$("#ms").change(function()
+{
+	$("#moon_song").val($(this).val());
+});
+$("#shell").change(function()
+{
+	$("#mysterious_shell").val($(this).val());
+});
+$("#naut").change(function()
+{
+	$("#nautilus").val($(this).val());
+});
+$("#sm_c").change(function()
+{
+	$("#sm_cal").val($(this).val());
+});
+$("#m_c").change(function()
+{
+	$("#m_cal").val($(this).val());
+});
+$("#bg_c").change(function()
+{
+	$("#bg_cal").val($(this).val());
+});
+$("#sm_v").change(function()
+{
+	$("#sm_vol").val($(this).val());
+});
+$("#m_v").change(function()
+{
+	$("#m_vol").val($(this).val());
+});
+$("#sm_v").change(function()
+{
+	$("#sm_vol").val($(this).val());
+});
+</script>
+</html>

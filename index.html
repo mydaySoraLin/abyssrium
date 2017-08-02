@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	
+	<link rel="stylesheet" href="layout.css" type="text/css" media="screen">
+	<script type="text/javascript" src="index_js.js"></script>
+
+	<title>水族箱愛心需求量計算</title>
+</head>
+
+<body>
+	<h2>點點水族箱-愛心需求量計算</h2>
+
+	<small style="color:red;">※程式中所使用到之一切資訊、數值皆為與友人比對後自行推算</small><br/>
+	<small style="color:red;">※程式為本人利用閒暇之餘、興趣製作，可「提供意見」，但請別「要求製作」</small><br/>
+	<small style="color:red;">※網頁是否增加功能一切看是否有時間&amp;後續心情</small><br/>
+	<small style="color:red;">※程式尚在測試中，如有問題煩請轉告~謝謝 </small><br/>
+	<a href="mailto:lindaes100@gmail.com">&gt; 寄信點此 &lt;</a><br/><br/>
+
+	<div id="btn">
+		<div class="form-group row">
+			<label class="col-3"></label>
+			<div class="col-6">
+				<a role="button" class="btn btn-sm btn-primary" href="index.html">魚/珊瑚石</a>
+				<a role="button" class="btn btn-sm btn-info" href="skill.html">使用技能</a>
+			</div>
+		</div>
+	</div>
+	<br/>
+
+	<div class="container" align="center center">
+		<label class="col-4">請選擇欲查詢的種類：</label>
+		<div class="form-group row">
+			<label class="col-4"></label>
+			<select name="type" id="type" class="form-control col-4">
+				<option value="0">請選擇</option>
+				<option value="1">魚類</option>
+				<option value="2">珊瑚石</option>
+			</select>
+		</div>
+		<br/>
+		<!-- 魚類 -->
+		<div id="fish">
+			<!-- <label class="col-4">請選擇購買過的禮包：</label> -->
+			<!-- 禮包魚 -->
+			<!-- <div class="form-group row">
+				<label class="col-2"></label>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="clown_fish" name="clown_fish" value="1" onclick="gift(this.id,0,0)" />初級禮包(黑白小丑魚)
+				</label>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="lion_fish" name="lion_fish" value="1" onclick="gift(this.id,0,0)" />中級禮包(獅子魚)
+				</label>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="jelly_fish" name="jelly_fish" value="1" onclick="gift(this.id,0,0)" />高級禮包(大型海蜇)
+				</label>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="seal" name="seal" value="1" onclick="gift(this.id,0,0)" />至尊禮包(豎琴海豹)
+				</label>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="mermaid" name="mermaid" value="1" onclick="gift(this.id,0,0)" />至尊禮包(美人魚)
+				</label>
+			</div> -->
+
+			<!-- 活動禮包魚 -->
+			<!-- <div class="form-group row">
+				<label class="col-1" style="margin-right: 1rem;"></label>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="halloween" name="halloween" value="1" onclick="gift(this.id,0,1)" />萬聖節禮包(幽靈抹香鯨)
+				</label>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="maxis" name="maxis" value="1" onclick="gift(this.id,0,1)" />聖誕節禮包(雪花鯨魚)
+				</label>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="valentine" name="valentine" value="1" onclick="gift(this.id,0,1)" />情人節禮包(愛心翻車魚)
+				</label>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="childs" name="childs" value="1" onclick="gift(this.id,0,1)" />兒童節禮包(太空兔子)
+				</label>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="one_year" name="one_year" value="1" onclick="gift(this.id,0,1)" />一周年節禮包(科基犬)
+				</label>
+			</div><br/> -->
+
+			<!-- 愛心需求量 -->
+			<label class="col-4">請輸入目前所需愛心量：</label>
+			<div class="form-group row">
+				<label class="col-4"></label>
+				<input type="text" class="form-control col-4" id="fish_value" name="fish_value" placeholder="目前所需愛心量" onkeyup="return ValidateNumber(this,value)" /><br/>
+			</div>
+
+			<!-- 魚隻數目 -->
+			<label class="col-4">請輸入想養的數量：</label>
+			<div class="form-group row">
+				<label class="col-4"></label>
+				<input type="text" class="form-control col-4" id="fish_num" name="fish_num" placeholder="魚隻數量" onkeyup="this.value=this.value.replace(/\D/g,'')" /><br/>
+			</div>
+		</div>
+
+		<!-- 珊瑚 -->
+		<div id="rock">
+			<label class="col-4">請輸入目前等級：</label>
+			<div class="form-group row">
+				<label class="col-4"></label>
+				<input type="text" class="form-control col-4" id="rock_lev" name="rock_lev" placeholder="目前等級" onkeyup="this.value=this.value.replace(/\D/g,'')" /><br/>
+			</div>
+
+			<label class="col-4">請輸入目前升等所需愛心量：</label>
+			<div class="form-group row">
+				<label class="col-4"></label>
+				<input type="text" class="form-control col-4" id="rock_value" name="rock_value" placeholder="目前所需愛心量" onkeyup="return ValidateNumber(this,value)" /><br/>
+			</div>
+		</div>
+
+		<!-- 愛心等級 -->
+		<div id="lev">
+			<label class="col-4">請輸入目前愛心等級：</label>
+			<div class="form-group row">
+				<label class="col-4"></label>
+				<input type="text" class="form-control col-4" id="lev_eng" name="lev_eng" placeholder="請輸入BB、BD、CS..." onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')" /><br/>
+			</div>
+		</div>
+
+		<div id="final">
+			<div class="form-group row">
+				<label class="col-3"></label>
+				<label class="col-6" id="result"></label><br/>
+			</div>
+		</div>
+		<button class="btn btn-primary" style="margin-top: 1rem;" onclick="search()">查詢</button>
+	</div>
+
+	<div id="creater"><small>made by SoraLin</small></div>
+</body>
+
+<script>
+$("#type").change(function()
+{
+	switch(parseInt($(this).val()))
+	{
+		case 1:
+			$("#fish").show();
+			$("#rock").hide();
+			$("#lev").show();
+			$("[type=checkbox]").val(1).prop("checked",false);
+			$("#fish_value,#fish_num,#lev_eng").val('');
+			$("#result").html('');
+		break;
+
+		case 2:
+			$("#fish").hide();
+			$("#rock").show();
+			$("#lev").show();
+			$("#rock_value,#rock_lev,#lev_eng").val('');
+			$("#result").html('');
+		break;
+
+		case 0:
+			$("#fish").hide();
+			$("#rock").hide();
+			$("#lev").hide();
+			$("#fish_value,#fish_num,#rock_value,#rock_lev,#lev_eng").val('');
+			$("#result").html('');
+		break;
+	}
+});
+</script>
+</html>
