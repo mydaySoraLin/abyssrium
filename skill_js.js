@@ -237,8 +237,9 @@ function skill_search()
 		bg_vol = 1;
 	}
 	// alert(sm_cal + " " + m_cal + " " + bg_cal + " " + sm_vol + " " + m_vol + " " + bg_vol);
-	// 倍率 = 沙城 * 火山口 * 神秘的貝殼
+	// 珊瑚石倍率 = 火山口 * 神秘的貝殼
 	magnification_rock = sm_vol * m_vol * bg_vol * myst_shell;
+	// 珊瑚倍率 = 沙城
 	magnification_coral = sm_cal * m_cal * bg_cal;
 	
 	ori_rock = rock_value / magnification_rock;
