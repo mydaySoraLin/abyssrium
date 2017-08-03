@@ -56,29 +56,13 @@ function search()
 	{
 		// 魚類
 		case 1:
-			//禮包
-			// clown_fish = $("#clown_fish").val();
-			// lion_fish = $("#lion_fish").val();
-			// jelly_fish = $("#jelly_fish").val();
-			// seal = $("#seal").val();
-			// mermaid = $("#mermaid").val();
-
-			// //活動禮包
-			// halloween = $("#halloween").val();
-			// maxis = $("#maxis").val();
-			// valentine = $("#valentine").val();
-			// childs = $("#childs").val();
-			// one_year = $("#one_year").val();
-
 			// 魚
 			fish_value = $("#fish_value").val();
 			fish_num = $("#fish_num").val();
 
 			var next_fish_value = 0;
-			// var magnification = 0;
-			// magnification = clown_fish * lion_fish * jelly_fish * seal * mermaid * halloween * maxis * valentine * childs * one_year;
 
-			//倍率(未確定)
+			//倍率
 			large = 3.5;
 
 			if(fish_value == '')
