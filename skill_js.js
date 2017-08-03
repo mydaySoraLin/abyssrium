@@ -238,10 +238,11 @@ function skill_search()
 	}
 	// alert(sm_cal + " " + m_cal + " " + bg_cal + " " + sm_vol + " " + m_vol + " " + bg_vol);
 	// 倍率 = 沙城 * 火山口 * 神秘的貝殼
-	magnification = sm_cal * m_cal * bg_cal * sm_vol * m_vol * bg_vol * myst_shell;
-
-	ori_rock = rock_value / magnification;
-	ori_coral = coral_value / magnification;
+	magnification_rock = sm_vol * m_vol * bg_vol * myst_shell;
+	magnification_coral = sm_cal * m_cal * bg_cal * myst_shell;
+	
+	ori_rock = rock_value / magnification_rock;
+	ori_coral = coral_value / magnification_coral;
 
 	//月之歌
 	if(moon_song != '')
