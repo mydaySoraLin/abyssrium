@@ -69,7 +69,7 @@ function skill(value,chk)
 			break;
 			//生命的氣息
 			case 11:
-				$("#touch").val(2).attr("onclick","skill(11,1)");
+				$("#live").val(2).attr("onclick","skill(11,1)");
 			break;
 		}
 	}
@@ -137,7 +137,7 @@ function skill(value,chk)
 			break;
 			//生命的氣息
 			case 11:
-				$("#touch").val('').attr("onclick","skill(11,0)");
+				$("#live").val('').attr("onclick","skill(11,0)");
 			break;
 		}
 	}
