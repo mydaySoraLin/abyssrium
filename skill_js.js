@@ -67,6 +67,10 @@ function skill(value,chk)
 				$("#bg_volc").show();
 				$("#bg_vol").attr("onclick","skill(10,1)");
 			break;
+			//生命的氣息
+			case 11:
+				$("#touch").val(2).attr("onclick","skill(11,1)");
+			break;
 		}
 	}
 	else
@@ -131,6 +135,10 @@ function skill(value,chk)
 				$("#bg_vol").attr("onclick","skill(10,0)");
 				$("#bg_v,#bg_vol").val('');
 			break;
+			//生命的氣息
+			case 11:
+				$("#touch").val('').attr("onclick","skill(11,0)");
+			break;
 		}
 	}
 	
@@ -145,6 +153,7 @@ function skill_search()
 	myst_shell    = $("#mysterious_shell").val();
 	nautilus 	  = $("#nautilus").val();
 	touch 		  = $("#touch").val();
+	live		  = $("#live").val();
 
 	sm_cal		  = $("#sm_cal").val();
 	m_cal		  = $("#m_cal").val();
@@ -240,6 +249,13 @@ function skill_search()
 		rock_value *= moon_song;
 		coral_value *= moon_song;
 		//alert('ms: ' + rock_value + '  '+ coral_value);
+	}
+
+	//生命的氣息
+	if(live != '')
+	{
+		rock_value *= 2;
+		coral_value *= 2;
 	}
 
 	//=====================================================
