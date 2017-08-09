@@ -12,11 +12,11 @@
 	<script type="text/javascript" src="index_js.js"></script>
 	<script type="text/javascript" src="func_sys.js"></script>
 
-	<title>水族箱愛心需求量計算</title>
+	<title>水族箱生命需求量計算</title>
 </head>
 
 <body>
-	<h2>點點水族箱-愛心需求量計算</h2>
+	<h2>點點水族箱-生命需求量計算</h2>
 
 	<small style="color:red;">※程式中所使用到之一切資訊、數值皆為與友人比對後自行推算</small><br/>
 	<small style="color:red;">※程式為本人利用閒暇之餘、興趣製作，可「提供意見」，但請別「要求製作」</small><br/>
@@ -50,11 +50,11 @@
 		<div id="fish">
 			<div style="color:red;">※小數點後可能會有些許差異，若查詢的魚隻數量越多，偏移量也會越大</div><br/>
 
-			<!-- 愛心需求量 -->
-			<label class="col-4">請輸入目前所需愛心量：</label>
+			<!-- 生命需求量 -->
+			<label class="col-4">請輸入目前所需生命量：</label>
 			<div class="form-group row">
 				<label class="col-4"></label>
-				<input type="text" class="form-control col-4" id="fish_value" name="fish_value" placeholder="目前所需愛心量" onkeyup="return ValidateNumber(this,value)" /><br/>
+				<input type="text" class="form-control col-4" id="fish_value" name="fish_value" placeholder="目前所需生命量" onkeyup="return ValidateNumber(this,value)" /><br/>
 			</div>
 
 			<!-- 魚隻數目 -->
@@ -73,16 +73,16 @@
 				<input type="text" class="form-control col-4" id="rock_lev" name="rock_lev" placeholder="目前等級" onkeyup="this.value=this.value.replace(/\D/g,'')" /><br/>
 			</div>
 
-			<label class="col-4">請輸入目前升等所需愛心量：</label>
+			<label class="col-4">請輸入目前升等所需生命量：</label>
 			<div class="form-group row">
 				<label class="col-4"></label>
-				<input type="text" class="form-control col-4" id="rock_value" name="rock_value" placeholder="目前所需愛心量" onkeyup="return ValidateNumber(this,value)" /><br/>
+				<input type="text" class="form-control col-4" id="rock_value" name="rock_value" placeholder="目前所需生命量" onkeyup="return ValidateNumber(this,value)" /><br/>
 			</div>
 		</div>
 
-		<!-- 愛心等級 -->
+		<!-- 生命等級 -->
 		<div id="lev">
-			<label class="col-4">請輸入目前愛心等級：</label>
+			<label class="col-4">請輸入目前生命等級：</label>
 			<div class="form-group row">
 				<label class="col-4"></label>
 				<input type="text" class="form-control col-4" id="lev_eng" name="lev_eng" placeholder="請輸入BB、BD、CS..." onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')" /><br/>
