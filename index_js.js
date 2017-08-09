@@ -24,7 +24,7 @@ function gift(id,chk,type)
 	}
 }
 
-//查詢魚類/珊瑚石需求愛心
+//查詢魚類/珊瑚石需求生命
 function search()
 {
 	type = parseInt($("#type").val());
@@ -40,7 +40,7 @@ function search()
 
 	if(lev_eng == '')
 	{
-		alert('請輸入目前愛心等級!');
+		alert('請輸入目前生命等級!');
 		$("#lev_eng").focus();
 		return false;
 	}
@@ -67,14 +67,14 @@ function search()
 
 			if(fish_value == '')
 			{
-				alert('請輸入目前所需愛心量!');
+				alert('請輸入目前所需生命量!');
 				$("#fish_value").focus();
 				return false;
 			}
 
 			if(fish_value > 1000)
 			{
-				alert('輸入的愛心量大於1000，請重新輸入!');
+				alert('輸入的生命量大於1000，請重新輸入!');
 				$("#fish_value").focus();
 				return false;
 			}
@@ -105,7 +105,7 @@ function search()
 			}
 			
 			$("#final").show();
-			$("#result").html(fish_num + "隻魚所需的愛心需求量約：" + next_fish_value + " " + eng);
+			$("#result").html(fish_num + "隻魚所需的生命需求量約：" + next_fish_value + " " + eng);
 		break;
 
 		// 珊瑚石
@@ -124,14 +124,14 @@ function search()
 
 			if(rock_value == '')
 			{
-				alert('請輸入目前珊瑚升級所需愛心量!');
+				alert('請輸入目前珊瑚升級所需生命量!');
 				$("#rock_value").focus();
 				return false;
 			}
 
 			if(rock_value > 1000)
 			{
-				alert('輸入的愛心量大於1000，請重新輸入!');
+				alert('輸入的生命量大於1000，請重新輸入!');
 				$("#rock_value").focus();
 				return false;
 			}
@@ -161,7 +161,7 @@ function search()
 			}
 			
 			$("#final").show();
-			$("#result").html("升級至" + (lev_quo + 1) * 25 + "等愛心需求量約：" + next_rock_value + " " + eng);
+			$("#result").html("升級至" + (lev_quo + 1) * 25 + "等生命需求量約：" + next_rock_value + " " + eng);
 		break;
 	}
 }
