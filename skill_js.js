@@ -237,11 +237,11 @@ function skill_search()
 		bg_vol = 1;
 	}
 	// alert(sm_cal + " " + m_cal + " " + bg_cal + " " + sm_vol + " " + m_vol + " " + bg_vol);
-	// 珊瑚石倍率 = 火山口 * 神秘的貝殼
+	// 點擊倍率 = 火山口 * 神秘的貝殼
 	magnification_rock = sm_vol * m_vol * bg_vol * myst_shell;
 	// 珊瑚倍率 = 沙城
 	magnification_coral = sm_cal * m_cal * bg_cal;
-	
+
 	ori_rock = rock_value / magnification_rock;
 	ori_coral = coral_value / magnification_coral;
 
@@ -326,5 +326,5 @@ function skill_search()
 	}
 
 	$("#final").show();
-	$("#result").html("五分鐘可產出最大量<br/>珊瑚石產量約： " + rock_value + " " + rock_lev_eg + "<br/>珊瑚產量約： " + coral_value + " " + coral_lev_eng);
+	$("#result").html("五分鐘可產出最大量<br/>點擊產量約： " + rock_value + " " + rock_lev_eg + "<br/>珊瑚產量約： " + coral_value + " " + coral_lev_eng);
 }
