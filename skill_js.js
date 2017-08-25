@@ -9,6 +9,7 @@ $(document).ready(function(){
 	$("#m_volc").hide();
 	$("#bg_volc").hide();
 	$("#final").hide();
+	$("#composite").hide();
 });
 
 //技能勾選
@@ -70,6 +71,11 @@ function skill(value,chk)
 			//生命的氣息
 			case 11:
 				$("#live").val(2).attr("onclick","skill(11,1)");
+			break;
+			//合成魚
+			case 12:
+				$("#composite").show();
+				$("#composite_fish").attr("onclick","skill(12,1)");
 			break;
 		}
 	}
@@ -139,6 +145,12 @@ function skill(value,chk)
 			case 11:
 				$("#live").val('').attr("onclick","skill(11,0)");
 			break;
+			//合成魚
+			case 12:
+				$("#composite").hide();
+				$("#composite_fish").attr("onclick","skill(12,0)");
+				$("#composite_value").val('');
+			break;
 		}
 	}
 	
@@ -154,6 +166,7 @@ function skill_search()
 	nautilus 	  = $("#nautilus").val();
 	touch 		  = $("#touch").val();
 	live		  = $("#live").val();
+	composite_value = $("#composite_value").val();
 
 	sm_cal		  = $("#sm_cal").val();
 	m_cal		  = $("#m_cal").val();
@@ -236,11 +249,21 @@ function skill_search()
 	{
 		bg_vol = 1;
 	}
+
+	// 合成魚
+	if(composite_value != '')
+	{
+		composite_value = composite_value / 100;
+	}
+	else
+	{
+		composite_value = 1;
+	}
 	// alert(sm_cal + " " + m_cal + " " + bg_cal + " " + sm_vol + " " + m_vol + " " + bg_vol);
 	// 點擊倍率 = 火山口 * 神秘的貝殼
-	magnification_rock = sm_vol * m_vol * bg_vol * myst_shell;
+	magnification_rock = sm_vol * m_vol * bg_vol * myst_shell * composite_value;
 	// 珊瑚倍率 = 沙城
-	magnification_coral = sm_cal * m_cal * bg_cal;
+	magnification_coral = sm_cal * m_cal * bg_cal * composite_value;
 
 	ori_rock = rock_value / magnification_rock;
 	ori_coral = coral_value / magnification_coral;
