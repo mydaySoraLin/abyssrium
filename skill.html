@@ -61,6 +61,9 @@
 				<label class="form-check-label">
 					<input type="checkbox" class="form-check-input" id="live" name="live" value="" onclick="skill(11,0)" />生命的氣息
 				</label>
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input" id="composite_fish" name="composite_fish" value="" onclick="skill(12,0)" />合成魚
+				</label>
 				<input type="hidden" id="mysterious_shell" name="mysterious_shell" value="" />
 				<input type="hidden" id="nautilus" name="nautilus" value="30" />
 			</div>
@@ -406,6 +409,16 @@
 					<option value="19">19</option>
 					<option value="20">20</option>
 				</select><br/>
+			</div>
+		</div>
+
+		<!-- 合成魚 -->
+		<div id="composite">
+			<div class="form-group row">
+				<label class="col-5 col-form-control">請輸入目前合成魚之加成：</label>
+				<div class="col-5">
+					<input type="text" class="form-control" id="composite_value" name="composite_value" placeholder="目前加成%數" onkeyup="this.value=this.value.replace(/\D/g,'')" />
+				</div>
 			</div>
 		</div>
 
